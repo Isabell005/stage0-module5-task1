@@ -11,20 +11,28 @@ public class ArrayTasks {
      * Return a String[] array that will list all the seasons of the year, starting with winter.
      */
     public String[] seasonsArray() {
+        String seasons[];
+        seasons = new String[]{"winter", "spring", "summer", "autumn"};
 
-    }
+        for (int i = 0; i < 4; i++) {
+            System.out.println(seasons[i]);
+        }
 
-    /**
-     * Generate an int[] array of consecutive positive integers
-     * starting at 1 of the given length (length parameter > 0).
-     * <p>
-     * Example:
-     * <p>
-     * length = 1  -> [1]
-     * length = 3  -> [1, 2, 3]
-     * length = 5  -> [1, 2, 3, 4, 5]
-     */
-    public int[] generateNumbers(int length) {
+        /**
+         * Generate an int[] array of consecutive positive integers
+         * starting at 1 of the given length (length parameter > 0).
+         * <p>
+         * Example:
+         * <p>
+         * length = 1  -> [1]
+         * length = 3  -> [1, 2, 3]
+         * length = 5  -> [1, 2, 3, 4, 5]
+         */
+        public int[] generateNumbers ( int length){
+            int[] arr= new int[]{1,length};
+
+
+        }
 
     }
 
@@ -37,8 +45,15 @@ public class ArrayTasks {
      * arr = [5, -3, -4] -> sum = -2
      */
     public int totalSum(int[] arr) {
-
+         arr = new int [] {};
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum = sum + arr[i];
+        }
+        System.out.println( sum);
+        return sum;
     }
+
 
     /**
      * Return the index of the first occurrence of number in the arr array.
@@ -50,7 +65,31 @@ public class ArrayTasks {
      * arr = [5, -3, -4],   number = 10    ->  -1
      */
     public int findIndexOfNumber(int[] arr, int number) {
+        arr = new int[]{};
+        int i = find_index(arr, 6);
+        if(i == -1)
+        {
+            System.out.print("Element not contained by the array");
+        }
+        else
+            System.out.print("Element found at : "+i);
+        return i;
+    }
 
+    private static int find_index(int [] arr,int j)
+    {
+        for(int i=0;i<arr.length;i++)
+        {
+            // comparing element to the target element
+            if(arr[i]==j)
+            {
+                return i;
+
+            }
+        }
+        return -1;
+
+    }
     }
 
     /**
