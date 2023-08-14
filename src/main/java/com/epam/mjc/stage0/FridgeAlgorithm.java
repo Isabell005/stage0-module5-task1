@@ -12,4 +12,6 @@ public class FridgeAlgorithm {
      */
     public void fridgeAlgorithm(Fridge fridge) {
 
+    }
+
 }
