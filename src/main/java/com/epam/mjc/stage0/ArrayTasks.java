@@ -11,28 +11,26 @@ public class ArrayTasks {
      * Return a String[] array that will list all the seasons of the year, starting with winter.
      */
     public String[] seasonsArray() {
-        String seasons[] = new String[]{"winter", "spring", "summer", "autumn"};
-        for (int i = 0; i < 4; i++) {
-            return seasons;
-        }
+        return new String[]{"winter", "spring", "summer", "autumn"};
+    }
 
-        /**
-         * Generate an int[] array of consecutive positive integers
-         * starting at 1 of the given length (length parameter > 0).
-         * <p>
-         * Example:
-         * <p>
-         * length = 1  -> [1]
-         * length = 3  -> [1, 2, 3]
-         * length = 5  -> [1, 2, 3, 4, 5]
-         */
-        public int[] generateNumbers ( int length){
-           generateNumbers = new int[length];
-            for (int i = 0; i < generateNumbers.length; i++) {
-               generateNumbers[i] = i + 1;
-            }
-            for (int i = 0; i < generateNumbers.length; i++) {
-                System.out.print(generateNumbers[i] + " ");
+    /**
+     * Generate an int[] array of consecutive positive integers
+     * starting at 1 of the given length (length parameter > 0).
+     * <p>
+     * Example:
+     * <p>
+     * length = 1  -> [1]
+     * length = 3  -> [1, 2, 3]
+     * length = 5  -> [1, 2, 3, 4, 5]
+     */
+    public int[] generateNumbers(int length) {
+        int[] generateNumbers = new int[length];
+        for (int i = 0; i < generateNumbers.length; i++) {
+            generateNumbers[i] = i + 1;
+        }
+        for (int i = 0; i < generateNumbers.length; i++) {
+            System.out.print(generateNumbers[i] + " ");
         }
 
 
@@ -44,12 +42,12 @@ public class ArrayTasks {
          * arr = [1, 3, 5]   -> sum = 9
          * arr = [5, -3, -4] -> sum = -2
          */
-        public int totalSum ( int[] arr){
-            arr = new int[length];
+        public static int totalSum (int[] arr){
             totalSum = 0;
-            for (int i : arr)
-                totalSum += i;
-            System.out.println(totalSum);
+            for (int num : arr) {
+                totalSum += num;
+            }
+            return new int[]{totalSum};
         }
     }
 
@@ -64,30 +62,14 @@ public class ArrayTasks {
      * arr = [5, -3, -4],   number = 10    ->  -1
      */
     public int findIndexOfNumber(int[] arr, int number) {
-            // if array is Null
-            if (arr == null) {
-                return -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == number) {
+                return i;
             }
-
-            // find length of array
-            int len = arr.length;
-            int i = 0;
-
-            // traverse in the array
-            while (i < len) {
-
-                // if the i-th element is t
-                // then return the index
-                if (arr[i] == number) {
-                    return i;
-                }
-                else {
-                    i = i + 1;
-                }
-            }
-            return -1;
         }
+        return -1;
     }
+
 
     /**
      * Return the new String[] array obtained from the arr array
@@ -129,13 +111,7 @@ public class ArrayTasks {
      * arr = [[5, 4], [7]]       -> [[7], [4, 5]]
      */
     public int[][] sortRaggedArray(int[][] arr) {
-            int[][] arr1 = sortArrByLength(arr);
-            for (int i = 0; i < arr1[i].length; i++) {
-                sortArrAscending(arr[i]);
-            }
-            return arr1;
-        }
-        }
+
 
     }
-}
+

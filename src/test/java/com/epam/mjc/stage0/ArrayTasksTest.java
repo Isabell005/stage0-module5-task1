@@ -69,7 +69,7 @@ public class ArrayTasksTest {
     @ParameterizedTest
     @MethodSource("totalSumTestProvider")
     public void totalSumTest(int[] arr, int expectedSum) {
-        assertEquals(expectedSum, arrayTasks.totalSum(arr),
+        assertEquals(expectedSum, arrayTasks.equals(arr),
                 "I think, something went wrong with total sum implementation");
     }
 
