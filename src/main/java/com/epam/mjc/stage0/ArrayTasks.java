@@ -25,30 +25,28 @@ public class ArrayTasks {
      * length = 5  -> [1, 2, 3, 4, 5]
      */
     public int[] generateNumbers(int length) {
-        int[] generateNumbers = new int[length];
-        for (int i = 0; i < generateNumbers.length; i++) {
-            generateNumbers[i] = i + 1;
+        int[] array = new int[length];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i + 1;
         }
-        for (int i = 0; i < generateNumbers.length; i++) {
-            System.out.print(generateNumbers[i] + " ");
-        }
+        return array;
+    }
 
 
-        /**
-         * Find the sum of all elements of the int[] array.
-         * <p>
-         * Example:
-         * <p>
-         * arr = [1, 3, 5]   -> sum = 9
-         * arr = [5, -3, -4] -> sum = -2
-         */
-        public static int totalSum ( int[] arr){
-            totalSum = 0;
-            for (int num : arr) {
-                totalSum += num;
-            }
-            return new int[]{totalSum};
+    /**
+     * Find the sum of all elements of the int[] array.
+     * <p>
+     * Example:
+     * <p>
+     * arr = [1, 3, 5]   -> sum = 9
+     * arr = [5, -3, -4] -> sum = -2
+     */
+    public static int totalSum(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            sum += arr[i];
         }
+        return sum;
     }
 
 
@@ -81,7 +79,11 @@ public class ArrayTasks {
      * arr = ["pineapple", "apple", "pen"] -> ["pen", "apple", "pineapple"]
      */
     public String[] reverseArray(String[] arr) {
-
+        String[] array = new String[arr.length];
+        for (int i = 0; i < arr.length; i++) {
+            array[i] = arr[arr.length - 1 - i];
+        }
+        return array;
     }
 
 
@@ -97,23 +99,50 @@ public class ArrayTasks {
      * arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
+        int[] array = new int[arr.length];
+        int count = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > 0) {
-                return new int[]{arr[i]};
+                array[count] = arr[i];
+                count++;
+            }
+        }
+        return array;
+    }
+
+    /**
+     * Return a sorted, ragged, two-dimensional int[][] array following these rules:
+     * Incoming one-dimensional arrays must be arranged in ascending order of their length;
+     * numbers in all one-dimensional arrays must be in ascending order.
+     * <p>
+     * Example:
+     * <p>
+     * arr = [[3, 1, 2,], [3,2]] -> [[2, 3], [1, 2, 3]]
+     * arr = [[5, 4], [7]]       -> [[7], [4, 5]]
+     */
+    public int[][] sortRaggedArray(int[][] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - i - 1; j++) {
+                if (arr[j].length > arr[j + 1].length) {
+                    int[] temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
             }
         }
 
-        /**
-         * Return a sorted, ragged, two-dimensional int[][] array following these rules:
-         * Incoming one-dimensional arrays must be arranged in ascending order of their length;
-         * numbers in all one-dimensional arrays must be in ascending order.
-         * <p>
-         * Example:
-         * <p>
-         * arr = [[3, 1, 2,], [3,2]] -> [[2, 3], [1, 2, 3]]
-         * arr = [[5, 4], [7]]       -> [[7], [4, 5]]
-         */
-        public int[][] sortRaggedArray ( int[][] arr){
-
+        for (int[] subArray : arr) {
+            for (int i = 0; i < subArray.length - 1; i++) {
+                for (int j = 0; j < subArray.length - i - 1; j++) {
+                    if (subArray[j] > subArray[j + 1]) {
+                        int temp = subArray[j];
+                        subArray[j] = subArray[j + 1];
+                        subArray[j + 1] = temp;
+                    }
+                }
+            }
         }
+        return arr;
+    }
+}
 
