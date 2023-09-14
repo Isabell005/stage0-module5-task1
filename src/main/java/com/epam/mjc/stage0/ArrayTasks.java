@@ -43,8 +43,8 @@ public class ArrayTasks {
      */
     public static int totalSum(int[] arr) {
         int sum = 0;
-        for (int i = 0; i < arr.length; i++) {
-            sum += arr[i];
+        for (int element : arr) {
+            sum += element;
         }
         return sum;
     }
@@ -99,15 +99,24 @@ public class ArrayTasks {
      * arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
-        int[] array = new int[arr.length];
-        int count = 0;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > 0) {
-                array[count] = arr[i];
+        int count = 0; // Count the number of positive elements
+        for (int element : arr) {
+            if (element > 0) {
                 count++;
             }
         }
-        return array;
+
+        int[] result = new int[count]; // Create a new array to store positive elements
+        int index = 0; // Index to insert positive elements into the result array
+
+        for (int element : arr) {
+            if (element > 0) {
+                result[index] = element;
+                index++;
+            }
+        }
+
+        return result;
     }
 
     /**
