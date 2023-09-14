@@ -17,6 +17,26 @@ public class FridgeIml implements Fridge {
     }
 
     @Override
+    public void openDoor() {
+
+    }
+
+    @Override
+    public boolean hasMilk() {
+        return false;
+    }
+
+    @Override
+    public void takeMilk() {
+
+    }
+
+    @Override
+    public void closeDoor() {
+
+    }
+
+    @Override
     public void close() {
         actionsQueue.add(Actions.CLOSE);
     }

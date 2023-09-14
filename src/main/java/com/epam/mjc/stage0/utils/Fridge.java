@@ -7,4 +7,12 @@ public interface Fridge {
     void open();
 
     void getMilk();
+
+    void openDoor();
+
+    boolean hasMilk();
+
+    void takeMilk();
+
+    void closeDoor();
 }
