@@ -23,6 +23,7 @@ public class FridgeIml implements Fridge {
 
     @Override
     public boolean hasMilk() {
+
         return false;
     }
 
